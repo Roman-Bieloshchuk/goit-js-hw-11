@@ -37,7 +37,7 @@ function handleSearch(event) {
             'Sorry, there are no images matching your search query. Please try again!',
           position: 'topRight',
         });
-        return;
+        return clearGallery();
       }
       createGallery(data.hits);
     })
@@ -49,6 +49,6 @@ function handleSearch(event) {
     })
     .finally(() => {
       hideLoader();
-      searchForm.reset();
+      event.target.reset();
     });
 }
